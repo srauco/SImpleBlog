@@ -6,21 +6,27 @@
 
 <html>
     <head>
-      <meta name="viewport" content="width=device-width" />
+        <meta name="viewport" content="width=device-width" />
         <title>@ViewBag.Title - SimpleBlog</title>
     </head>
-<body>
-<header>
+    <body>
+        <header>
+            <h1>
+                <a href="@Url.RouteUrl("home")">SimpleBlog</a>
+            </h1>
+            <a href="@Url.RouteUrl("login")">Login</a>
+        </header>
 
-    <h1>
-            <a href="@Url.RouteUrl("home")">SimpleBlog</a>
-    </h1>
-    <a href="@Url.RouteUrl("login")">Login</a>
-</header>
+        <!-- INSERT VIEW HERE -->
 
-    <!-- INSERT VIEW HERE -->
+        @RenderBody()
 
-    @RenderBody()
+        <footer>
+            &copy; @DateTime.UtcNow.Year - Me
+        </footer>
 
-</body>
+        @RenderSection("Scripts", false)
+
+    </body>
+
 </html>
